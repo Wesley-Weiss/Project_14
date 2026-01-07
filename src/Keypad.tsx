@@ -44,7 +44,55 @@ export default function Keypad() {
     
   useEffect(() => { dispatch(addValues("")) }, [dispatch]);
   useEffect(() => { dispatch(updateTypingStatus(false)) }, [dispatch]);
-  
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key;
+
+      if (!isNaN(Number(key))) {
+        dispatch(addValues(key));
+        dispatch(updateTypingStatus(true));
+        return;
+      }
+
+      switch (key) {
+        case "+":
+          dispatch(addOperators("+"));
+          dispatch(updateTypingStatus(true));
+          break;
+        case "-":
+          dispatch(addOperators("-"));
+          dispatch(updateTypingStatus(true));
+          break;
+        case "*":
+          dispatch(addOperators("×"));
+          dispatch(updateTypingStatus(true));
+          break;
+        case "/":
+          dispatch(addOperators("÷"));
+          dispatch(updateTypingStatus(true));
+          break;
+        case "=":
+        case "Enter":
+          dispatch(updateTypingStatus(false));
+          dispatch(evaluate());
+          break;
+        case "Backspace":
+          dispatch(backspace());
+          break;
+        case "c":
+        case "C":
+          dispatch(clear());
+          break;
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [dispatch]);
+
     return ( 
       <>
         <div className="keypad">
