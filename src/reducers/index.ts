@@ -18,7 +18,6 @@ const calculatorReducer = (state = initialState, action: Action) => {
         sanitizedInput = sanitizedInput.slice(0, -1);
       }
       const answer = eval(sanitizedInput);
-      (answer);
       return {
         ...state,
         input: answer.toString(),
