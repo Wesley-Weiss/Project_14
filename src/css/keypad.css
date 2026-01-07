@@ -1,0 +1,118 @@
+.keypad {
+  height: 40vh;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.keypad .left-side {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.keypad .left-side .numbers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  -moz-column-gap: 1.4%;
+       column-gap: 1.4%;
+  row-gap: 2%;
+  height: 100%;
+  justify-content: end;
+}
+.keypad .left-side .numbers .btn {
+  font-size: 1.5rem;
+  border: none;
+  width: 32%;
+  height: 25%;
+  place-content: center;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #0398fc;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+@media (max-width: 430px) {
+  .keypad .left-side .numbers .btn {
+    width: 30%;
+  }
+}
+.keypad .left-side .numbers .btn:hover {
+  background-color: #04edfd;
+}
+.keypad .left-side .operators {
+  display: flex;
+  width: 67%;
+  justify-content: space around;
+  align-items: start;
+  gap: 1.5%;
+  margin-top: -15%;
+  padding-top: 1%;
+  border-top: 3px double white;
+}
+@media (max-height: 800px) {
+  .keypad .left-side .operators {
+    border-top: none;
+    margin-top: -5%;
+  }
+}
+.keypad .left-side .operators .btn {
+  font-size: 2.5rem;
+  border: none;
+  width: 23.5%;
+  height: 100%;
+  place-content: center;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #04edfd;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+@media (max-width: 430px) {
+  .keypad .left-side .operators .btn {
+    width: 22%;
+  }
+}
+@media (max-height: 800px) {
+  .keypad .left-side .operators .btn {
+    font-size: 1.8rem;
+  }
+}
+.keypad .left-side .operators .btn:hover {
+  background-color: #0398fc;
+}
+.keypad .right-side {
+  width: 18%;
+  height: 100%;
+}
+.keypad .right-side .utilities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4%;
+  height: inherit;
+}
+.keypad .right-side .utilities .btn {
+  font-size: 1.5rem;
+  border: none;
+  width: 80%;
+  height: 48%;
+  place-content: center;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #04edfd;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.keypad .right-side .utilities .btn:hover {
+  background-color: #0398fc;
+}/*# sourceMappingURL=keypad.css.map */

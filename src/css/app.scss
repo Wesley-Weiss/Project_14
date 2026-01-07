@@ -1,0 +1,14 @@
+//Galatians 5:22-23 (NIV)
+//"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control. Against such things there is no law." 
+
+.app {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    @media (max-height: 600px) {
+        height: 80vh;
+    }
+}
